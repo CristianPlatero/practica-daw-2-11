@@ -1,0 +1,20 @@
+# wp-config.php no se sirve nunca, aunque PHP deje de funcionar
+<Files "wp-config.php">
+    Require all denied
+</Files>
+
+# El formulario de acceso solo desde la IP de administración
+<Files "wp-login.php">
+    Require ip IP_ADMIN_HERE
+</Files>
+
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+</IfModule>
+# END WordPress

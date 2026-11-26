@@ -1,0 +1,9 @@
+#Credenciales
+
+scripts/.env
+
+# Paquetes de copia: contienen usuarios, correos y hashes de contraseñas
+
+*.tar.gz
+*.sql
+*.sha256
